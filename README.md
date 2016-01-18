@@ -29,8 +29,10 @@ Notes:
 - Export region $ export AWS_REGION=us-west-2 
 
 **Here are a few others if you would like to set those up depending on your preference.**
+
 Kinesis-cat
-- [(Ruby)](https://github.com/winebarrel/kinesis_cat)Kinesis-cat
+
+- [(Ruby)](https://github.com/winebarrel/kinesis_cat)
 - [(Go)](https://github.com/winebarrel/kinesis-cat-go)
 
 If you have any plans to work with AWS lambda, then you will end up needing to validate your payloads to the stream, and lambda does have some tools for troubleshooting but if you find you need to dig further in then you may want to consider setting up one of these tools.
