@@ -133,13 +133,13 @@ function postToESBulk(doc, context) {
 ### Setup an elasticsearch service in AWS
 ![Setting up elasticsearch](/images/2016-01-21-using-elasticsearch-with-kinesis-and-lambda/elasticsearch-initial.png "Setting up elasticsearch")
 
-- ** Follow remaining steps to setup the elasticsearch instance **
-- ** The Kibana interface is used to setup and configure the elasticsearch index **
+-  Follow online remaining steps to setup the elasticsearch instance
+-  The Kibana interface is used to setup and configure the elasticsearch index
 
 ![Setting up elasticsearch-index](/images/2016-01-21-using-elasticsearch-with-kinesis-and-lambda/elasticsearch-index.png "Setting up elasticsearch-index")
 
 ### Setup Kibana graphs
-![Kibana graphs](/images/2016-01-21-using-elasticsearch-with-kinesis-and-lambda/kibania-graphs.png "Kibana graphs")
+![Kibana graphs](/images/2016-01-21-using-elasticsearch-with-kinesis-and-lambda/kibana-graphs.png "Kibana graphs")
 
 ### Example of a pretty graph using the data streamed to Kinesis.
-![Kibana graphs example](/images/2016-01-21-using-elasticsearch-with-kinesis-and-lambda/kibania-graphs-example.png "Kibana graphs example")
+![Kibana graphs example](/images/2016-01-21-using-elasticsearch-with-kinesis-and-lambda/kibana-graphs-example.png "Kibana graphs example")
