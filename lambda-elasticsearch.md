@@ -145,3 +145,7 @@ function postToESBulk(doc, context) {
 
 ### Example of a pretty graph using the data streamed to Kinesis.
 ![Kibana graphs example](/images/2016-01-21-using-elasticsearch-with-kinesis-and-lambda/kibana-graph-example.png "Kibana graphs example")
+
+
+### Recap
+This was a very useful learning experience and if you would like some additional tools for troubleshooting kinesis streams check out the Lessons learned from troubleshooting Kinesis blog for details on how to capture the json payload data on a stream.  
