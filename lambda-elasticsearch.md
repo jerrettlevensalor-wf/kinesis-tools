@@ -6,11 +6,11 @@ Slug: Using elasticsearch with Kinesis and Lambda
 Author: Jerrett Levensalor
 Summary: Notes on setting up elasticsearch with Kinesis leveraging lambda functions
 
-** Using elasticsearch with Kinesis and Lambda.**
+## Using elasticsearch with Kinesis and Lambda
 
-I admit, kinesis streams are pretty darn cool.  The ability to stream large amounts of data and do something useful with the data is not only a challenge but can be quite fun as well.  It's exciting to find new ways to leverage the data.  
+I admit kinesis streams are pretty darn cool.  The ability to stream large amounts of data and do something useful with the data is not only a challenge but can be quite fun as well.  It's exciting to find new ways to leverage the data.  
 
-This is just a quick overview on how we setup an elasticsearch service to be a consumer of a Kinesis stream levaraging AWS lambda functions and create simple graphs using Kibana in front of elasticsearch for a recent monan jam.  Kudo's to the monan team specifically, Shawn Russaw, Thian-Peng Ter, and Trenton Smith who helped in setting this up.  The following is an overview on the notes throughtout the process.      
+This is just a quick overview on how we setup an elasticsearch service to be a consumer of a Kinesis stream leveraging AWS lambda functions and created simple graphs using Kibana in front of elasticsearch for a recent monan jam.  Kudo's to the monan team specifically, Shawn Russaw, Thian-Peng Ter, and Trenton Smith who helped in setting this up.  The following is an overview on the notes through out the process.      
 
 ** What we built **
 1.  A new kinesis stream for streaming data to it
