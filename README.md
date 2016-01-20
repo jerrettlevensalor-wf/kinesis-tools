@@ -22,6 +22,7 @@ Use the steps referenced here [kinesis-tools](https://github.com/AutoScout24/kin
 **Here is an example:**
 
 `WF13367:kinesis-tools jerrettlevensalor$ ./kinesis-tail.rb harbour-wk-dev-west
+
 {"host":{"fqdn":"mark-manness-admin-1.internal.harbour","zone":"us-west-2a"},"level":"info","message":"Starting Generate /run/coreos/motd...","name":"daemon","process":{"pid":1,"cmd":"/usr/lib64/systemd/systemd"},"source":"host","timestamp":"2016-01-18T18:39:31.221199Z","type":"log","version":"1.0"}
 {"host":{"fqdn":"mark-manness-admin-1.internal.harbour","zone":"us-west-2a"},"level":"info","message":"Started Generate /run/coreos/motd.","name":"daemon","process":{"pid":1,"cmd":"/usr/lib64/systemd/systemd"},"source":"host","timestamp":"2016-01-18T18:39:31.230732Z","type":"log","version":"1.0"}`
 Notes:
