@@ -4,37 +4,34 @@ Category: InfRe
 Tags: Engineering, Kinesis, elasticsearch
 Slug: Using elasticsearch with Kinesis and Lambda
 Author: Jerrett Levensalor
-Summary: Notes on setting up elasticsearch with Kinesis leveraging lambda functions 
+Summary: Notes on setting up elasticsearch with Kinesis leveraging lambda functions
 
 ** Using elasticsearch with Kinesis and Lambda.**
 
-Kinesis streams are pretty darn cool.  The ability to stream large amounts of data and do something useful with the
-data is not only the challenge but also the fun in finding out new ways to leverage the data.  
+I admit, kinesis streams are pretty darn cool.  The ability to stream large amounts of data and do something useful with the data is not only a challenge but can be quite fun as well.  It's exciting to find new ways to leverage the data.  
 
-This is just a quick overview on how we setup an elasticsearch service to be a consumer of a Kinesis stream levaraging 
-AWS lambda functions and create some simple graphs using Kibana in front of elasticsearch.  
+This is just a quick overview on how we setup an elasticsearch service to be a consumer of a Kinesis stream levaraging AWS lambda functions and create simple graphs using Kibana in front of elasticsearch for a recent monan jam.  Kudo's to the monan team specifically, Shawn Russaw, Thian-Peng Ter, and Trenton Smith who helped in setting this up.  The following is an overview on the notes throughtout the process.      
 
 ** What we built **
-- A new kinesis stream for streaming data to it
-- A lambda function that consumes the stream and sends to elasticsearch
-- An elasticsearch service in AWS 
-- A kibana graph for graphing the data
+1.  A new kinesis stream for streaming data to it
+2.  A lambda function that consumes the stream and sends to elasticsearch
+3.  An elasticsearch service in AWS
+4.  A kibana graph for graphing the data
 
-### What was done already
-- The endpoint for producing the data and sending to the stream 
-- If you would like to find out more about the endpoint and streaming to kinesis see the monan team (Trenton Smith)
-
-So what does the progression from novice API-user to master look like?  Typically, we'd expect the progression from
-novice to competent to be linear:
+** What was done already  **
+- The endpoint for producing the data and sending to the stream
+- If you would like to find out more about the endpoint and streaming to kinesis see the monan team.  
 
 
-### Setup the Kinesis stream
+
+### 1. Setup the Kinesis stream
 ![Setting up the Kinesis stream](/images/2016-01-21-using-elasticsearch-with-kinesis-and-lambda/kinesis-stream.png "Setting up the Kinesis stream")
 
-### Setup the lambda function
+### 2. Setup the lambda function
 ![Setting up the lambda function](/images/2016-01-21-using-elasticsearch-with-kinesis-and-lambda/lambda-function.png "Setting up the lambda function")
 
-####Breaking down the node.js file.  
+##### If you would like more on lambda functions check out [AWS Lambda](http://docs.aws.amazon.com/lambda/latest/dg/welcome.html)
+#### Breaking down the node.js file.  
 ###### Setup the the Globals
 
 ```javascript
@@ -45,7 +42,7 @@ var path = require('path');
 /* == Globals == */
 var esDomain = {
     region: 'us-east-1',
-    endpoint: 'generated link from elasticsearch service and put here before the region.us-east-1.es.amazonaws.com',
+    endpoint: 'generated link from elasticsearch service below under Elasticsearch and put here before the region.us-east-1.es.amazonaws.com',
     index: 'monan-jam-index',
     doctype: 'mytype'
 };
@@ -127,13 +124,22 @@ function postToESBulk(doc, context) {
 }
 ```
 #### Use monitoring tab to view lambda function performance
-![Monitoring lambda](/images/2016-01-21-using-elasticsearch-with-kinesis-and-lambda/monitor-lambda.png "Monitoring lambda function")
+![Monitoring lambda](/images/2016-01-21-using-elasticsearch-with-kinesis-and-lambda/lambda-monitor.png "Monitoring lambda function")
+
 #### Using the log output from running test action on lambda function
 ![Monitoring lambda logs](/images/2016-01-21-using-elasticsearch-with-kinesis-and-lambda/monitor-lambda-log.png "Monitoring lambda logs")
 
+
 ### Setup an elasticsearch service in AWS
-![Setting up elasticsearch](/images/2016-01-21-using-elasticsearch-with-kinesis-and-lambda/elasticsearc.png "Setting up elasticsearch")
-- Notes
+![Setting up elasticsearch](/images/2016-01-21-using-elasticsearch-with-kinesis-and-lambda/elasticsearch-initial.png "Setting up elasticsearch")
+
+- ** Follow remaining steps to setup the elasticsearch instance **
+- ** The Kibana interface is used to setup and configure the elasticsearch index **
+
+![Setting up elasticsearch-index](/images/2016-01-21-using-elasticsearch-with-kinesis-and-lambda/elasticsearch-index.png "Setting up elasticsearch-index")
 
 ### Setup Kibana graphs
+![Kibana graphs](/images/2016-01-21-using-elasticsearch-with-kinesis-and-lambda/kibania-graphs.png "Kibana graphs")
 
+### Example of a pretty graph using the data streamed to Kinesis.
+![Kibana graphs example](/images/2016-01-21-using-elasticsearch-with-kinesis-and-lambda/kibania-graphs-example.png "Kibana graphs example")
