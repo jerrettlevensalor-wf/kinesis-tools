@@ -133,6 +133,7 @@ function postToESBulk(doc, context) {
 ### Setup an elasticsearch service in AWS
 ![Setting up elasticsearch](/images/2016-01-21-using-elasticsearch-with-kinesis-and-lambda/elasticsearch-initial.png "Setting up elasticsearch")
 
+** Notes **
 -  Follow online remaining steps to setup the elasticsearch instance
 -  The Kibana interface is used to setup and configure the elasticsearch index
 
